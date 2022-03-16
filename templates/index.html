@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='app.css')}}">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>Currency Converter</h1>
+    </div>
+   <section>
+       {%for message in get_flashed_messages()%}
+       <p>{{message}}</p>
+       {% endfor %}
+   </section>
+    <div class="container">
+    <form class="curConver" action="/convert" method="POST">
+        <div>
+            <label for="fromCurr">Converting from</label>
+            <input id="fromCurr" type="text" name="fromCurr" placeholder="ex: USD">
+        </div>
+        <div class="break"></div>
+        <div>
+            <label for="toCurr">Converting to</label>
+            <input id="toCurr" type="text" name="toCurr" placeholder="ex: GBP">
+        </div>
+        <div class="break"></div>
+        <div>
+            <label for="amount">Amount</label>
+            <input id="amount" type="text" name="amount" placeholder="ex: 50">
+        </div>
+        <div class="break"></div>
+        <div>
+            <button class="submitBtn">Convert</button>
+        </div>
+    </form>
+    <div>
+    {%for resp in responses%}
+    <p>{{resp}}</p>
+    {%endfor%}
+    </div>
+    </div>
+</body>
+</html>

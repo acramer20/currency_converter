@@ -1,0 +1,17 @@
+.heading {
+	display: flex;
+	justify-content: center;
+}
+.curConver {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+.break {
+	flex-basis: 100%;
+	margin: 5px;
+}
+.container {
+	display: flex;
+	justify-content: center;
+}
